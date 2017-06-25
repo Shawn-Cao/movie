@@ -1,0 +1,12 @@
+.Movie {
+  position: relative;
+  width: inherit;
+  padding: 20px;
+  background-color: black;
+}
+
+.MovieList {
+  display: inline-block;
+  width: 154px;
+  height: 278px;
+}

@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "plug and play component to display list of popular moviews. React based module with minimum dependency.",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shawn-Cao/movie.git"
@@ -20,5 +17,18 @@
   "bugs": {
     "url": "https://github.com/Shawn-Cao/movie/issues"
   },
-  "homepage": "https://github.com/Shawn-Cao/movie#readme"
+  "homepage": "https://github.com/Shawn-Cao/movie#readme",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }

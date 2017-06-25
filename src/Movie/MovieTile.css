@@ -1,0 +1,22 @@
+.MovieTile {
+  position: absolute;
+}
+
+.poster-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 154px;
+  height: 278px;
+  border: 1px solid black;
+  transition-property: left, top, height, width;
+  transition-duration: 1s;
+}
+
+.poster-img:hover {
+  left: -25px;
+  top: -14px;
+  width: 200px;
+  height: 361px;
+  z-index: 100;
+}
