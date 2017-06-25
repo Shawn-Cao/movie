@@ -12,7 +12,7 @@ class Movies extends Component {
 
   render() {
     return (
-      <div style={{width: this.props.width, height: this.props.height, overflowY: 'scroll'}}>
+      <div id="movie-widget" style={{width: this.props.width, height: this.props.height, overflowY: 'scroll'}}>
        <MovieList />
       </div>
     );

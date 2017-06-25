@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MovieTile from './MovieTile';
 import api from './api/theMovieDb';
 import './MovieList.css';
+import { throttle } from 'lodash';
 
 class MovieList extends Component {
   static get propTypes() {
@@ -14,27 +15,35 @@ class MovieList extends Component {
     this.state = {
       movieList: []
     };
-    api.getMovieList().then((res) => this.setState({movieList: res.results}));
-    this.handleScroll = this.handleScroll.bind(this);
+    this.fetchMovie();
+    this.handleScroll = throttle(this.handleScroll.bind(this), 500);
   }
 
-  handleScroll(ev) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        // you're at the bottom of the page
+  fetchMovie(page) {
+    api.getMovieList(undefined, page || this.state.page).then((res) => this.setState({
+      movieList: this.state.movieList.concat(res.results),
+      page: res.page
+    }));
+  }
+
+  handleScroll(e) {
+    if (e.target.scrollTop >= e.target.clientHeight) {
+      console.log(e.target.clientHeight);
+      this.fetchMovie(this.state.page + 1);
     }
   }
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+    document.getElementById('movie-widget').addEventListener("scroll", this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    document.getElementById('movie-widget').removeEventListener("scroll", this.handleScroll);
   }
 
   render() {
     const movieTiles = this.state.movieList.map((movie) =>
-      <li className='MovieList'><MovieTile movie={movie} /></li>
+      <li key={movie.id} className='MovieList'><MovieTile movie={movie} /></li>
     );
     return (
       <ul className="Movie">{movieTiles}</ul>
