@@ -5,9 +5,11 @@ const ENDPOINT = 'https://api.themoviedb.org/3/movie/';
 export default {
   getMovieList: (collection = 'popular', page = 1) => {
     return fetch(`${ENDPOINT}${collection}?api_key=${API_KEY}&language=en-US&page=${page}`)
-     .then(
-       (response) => response.json(),
-       (error) => console.log(error)
-     );
+      .then((response) => {
+        if(response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      });
   }
 };

@@ -6,14 +6,14 @@ import './MovieList.css';
 class MovieList extends Component {
   static get propTypes() {
     return {
-      movies: PropTypes.array
+      movies: PropTypes.array.isRequired
     };
   }
 
   render() {
     const movieTiles = this.props.movies.map((movie) =>
-      <li key={movie.id} className='MovieList'><MovieTile movie={movie} /></li>
-    );
+        <li key={movie && movie.id} className='MovieList'><MovieTile movie={movie} /></li>
+      );
     return (
       <ul className="Movie">{movieTiles}</ul>
     );

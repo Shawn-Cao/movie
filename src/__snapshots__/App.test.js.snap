@@ -7,58 +7,51 @@ exports[`App renders without crashing and matching snapshot 1`] = `
   <h1
     className="heading-movies"
   >
-    POPULAR MOVIES
+    POPULAR
   </h1>
   <div
     style={
       Object {
-        "height": 600,
+        "left": "100px",
         "position": "relative",
-        "width": 850,
       }
     }
   >
     <div
-      className={undefined}
-      style={
-        Object {
-          "left": "50%",
-          "position": "absolute",
-          "top": "50%",
-          "zIndex": 1000,
-        }
-      }
-    >
-      <img
-        alt="loading spinner"
-        className="Spinner"
-        src="logo.svg"
-      />
-    </div>
-    <div
-      id="movie-widget"
       style={
         Object {
           "height": 600,
-          "overflowY": "scroll",
           "position": "relative",
-          "width": 850,
+          "width": 1000,
         }
       }
     >
-      <ul
-        className="Movie"
+      <div
+        className="spinner"
+        style={undefined}
+      >
+        <img
+          alt="loading spinner"
+          className="Spinner"
+          src="logo.svg"
+        />
+      </div>
+      
+      <div
+        id="movie-widget"
+        style={
+          Object {
+            "height": 600,
+            "overflowY": "scroll",
+            "position": "relative",
+            "width": 1000,
+          }
+        }
       />
     </div>
   </div>
-  <p
-    className="App-intro"
-  >
-    To get started, edit 
-    <code>
-      src/App.js
-    </code>
-     and save to reload.
+  <p>
+    Demo of modular Movie component on any arbitrary app. API: width/height - override movie component default size
   </p>
 </div>
 `;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MovieList from './MovieList';
 import Spinner from './Spinner';
+import './index.css';
 
 import api from './api/theMovieDb';
 import { throttle } from 'lodash';
@@ -11,6 +12,13 @@ class Movies extends Component {
     return {
       width: PropTypes.number,
       height: PropTypes.number
+    };
+  }
+
+  static get defaultProps() {
+    return {
+      width: 850,
+      height: 600
     };
   }
 
@@ -26,13 +34,19 @@ class Movies extends Component {
   // Fetch Movie: 1. from API of choice. 2. always toggle spinner
   fetchMovie(page) {
     this.setState({
-      spinner: true
+      spinner: true,
+      error: ''
     });
     api.getMovieList(undefined, page || this.state.page).then((res) => {
       this.setState({
         spinner: false,
         movieList: this.state.movieList.concat(res.results),
         page: res.page
+      });
+    }).catch((error) => {
+      this.setState({
+        spinner: false,
+        error: 'Error fetching movie data from network!'
       });
     });
   }
@@ -57,10 +71,15 @@ class Movies extends Component {
     return (
       <div style={{width: this.props.width, height: this.props.height, position: 'relative'}}>
         {this.state.spinner &&
-          <Spinner spin={this.state.spinner} style={{position: 'absolute', top: '50%', left: '50%', zIndex: 1000}} />
+          <Spinner spin={this.state.spinner} className="spinner" />
+        }
+        {this.state.error &&
+          <div className="error-text"><h2>{this.state.error}</h2></div>
         }
         <div id="movie-widget" style={{width: this.props.width, height: this.props.height, position: 'relative', overflowY: 'scroll'}}>
-          <MovieList movies={this.state.movieList}/>
+          {this.state.movieList.length>0 &&
+            <MovieList movies={this.state.movieList}/>
+          }
         </div>
       </div>
     );

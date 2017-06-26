@@ -2,22 +2,22 @@
   text-align: center;
 }
 
+h1 {
+  font-size: 3em;
+}
+
 .heading-movies {
   color: red;
   text-align: left;
   animation: showup 2s;
   position: relative;
   margin-bottom: -20px;
-  margin-left: 60px;
+  margin-left: 160px;
 }
 
 @keyframes showup {
-    from { top: 20px; }
+    from { top: 30px; }
     to   { top: 0; }
-}
-
-.App-intro {
-  font-size: large;
 }
 
 .box {

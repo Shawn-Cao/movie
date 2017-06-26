@@ -5,7 +5,7 @@ import './MovieTile.css';
 class MovieTile extends Component {
   static get propTypes() {
     return {
-      movie: PropTypes.object
+      movie: PropTypes.object.isRequired
     };
   }
 

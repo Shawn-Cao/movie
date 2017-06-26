@@ -6,10 +6,14 @@ class App extends Component {
   render() { //TODO: clear up here
     return (
       <div className="App">
-        <h1 className="heading-movies">{'POPULAR MOVIES'}</h1>
-        <Movies width={850} height={600}/>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+        <h1 className="heading-movies">
+          POPULAR
+        </h1>
+        <div style={{position: 'relative', left: '100px'}}>
+          <Movies width={1000} height={600}/>
+        </div>
+        <p>
+          Demo of modular Movie component on any arbitrary app. API: width/height - override movie component default size
         </p>
       </div>
     );
