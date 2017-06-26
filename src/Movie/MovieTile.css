@@ -11,6 +11,12 @@
   border: 1px solid black;
   transition-property: left, top, height, width;
   transition-duration: 1s;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .poster-img:hover {

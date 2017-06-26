@@ -24,10 +24,7 @@ class Movies extends Component {
     this.handleScroll = throttle(this.handleScroll.bind(this), 500);
   }
 
-  spin(spinner = true) {
-    return this.setState({ spinner: spinner });
-  }
-
+  // Fetch Movie: 1. from API of choice. 2. always toggle spinner
   fetchMovie(page) {
     this.setState({
       spinner: true
@@ -42,8 +39,7 @@ class Movies extends Component {
   }
 
   handleScroll(e) {
-    if (e.target.scrollTop >= e.target.clientHeight) {
-      console.log(e.target.clientHeight);
+    if (e.target.scrollTop + e.target.clientHeight >= e.target.scrollHeight) {
       this.fetchMovie(this.state.page + 1);
     }
   }
