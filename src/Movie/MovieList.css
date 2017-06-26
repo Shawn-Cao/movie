@@ -1,7 +1,7 @@
 .Movie {
   position: relative;
   width: inherit;
-  padding: 20px;
+  padding: 20px 0;
   background-color: black;
 }
 

@@ -20,7 +20,6 @@ class Movies extends Component {
       spinner: false,
       movieList: []
     };
-    this.fetchMovie();
     this.handleScroll = throttle(this.handleScroll.bind(this), 500);
   }
 
@@ -46,11 +45,12 @@ class Movies extends Component {
 
   // Register scroll event: 1. on this component only. 2. with throttling
   componentDidMount() {
-    document.getElementById('movie-widget').addEventListener("scroll", this.handleScroll);
+    global.document.getElementById('movie-widget').addEventListener("scroll", this.handleScroll);
+    this.fetchMovie();
   }
 
   componentWillUnmount() {
-    document.getElementById('movie-widget').removeEventListener("scroll", this.handleScroll);
+    global.document.getElementById('movie-widget').removeEventListener("scroll", this.handleScroll);
   }
 
   render() {

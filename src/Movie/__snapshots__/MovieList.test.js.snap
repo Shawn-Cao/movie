@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieTime renders matching snapshot 1`] = `
+<ul
+  className="Movie"
+>
+  <li
+    className="MovieList"
+  >
+    <div
+      className="MovieTile"
+    >
+      <img
+        alt="poster of movie: Wonder Woman"
+        className="poster-img"
+        src="http://image.tmdb.org/t/p/w185/gfJGlDaHuWimErCr5Ql0I8x9QSy.jpg"
+      />
+    </div>
+  </li>
+  <li
+    className="MovieList"
+  >
+    <div
+      className="MovieTile"
+    >
+      <img
+        alt="poster of movie: Logan"
+        className="poster-img"
+        src="http://image.tmdb.org/t/p/w185/9EXnebqbb7dOhONLPV9Tg2oh2KD.jpg"
+      />
+    </div>
+  </li>
+</ul>
+`;

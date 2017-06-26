@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieTime matches snapshot when spinning 1`] = `
+<div
+  className={undefined}
+  style={undefined}
+>
+  <img
+    alt="loading spinner"
+    className="Spinner"
+    src="logo.svg"
+  />
+</div>
+`;
+
+exports[`MovieTime matchss snapshot when not spinning 1`] = `
+<div
+  className={undefined}
+  style={undefined}
+>
+  <img
+    alt="loading spinner"
+    className="Spinner"
+    src="logo.svg"
+  />
+</div>
+`;

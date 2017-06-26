@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders without crashing and matching snapshot 1`] = `
+<div
+  className="App"
+>
+  <h1
+    className="heading-movies"
+  >
+    POPULAR MOVIES
+  </h1>
+  <div
+    style={
+      Object {
+        "height": 600,
+        "position": "relative",
+        "width": 850,
+      }
+    }
+  >
+    <div
+      className={undefined}
+      style={
+        Object {
+          "left": "50%",
+          "position": "absolute",
+          "top": "50%",
+          "zIndex": 1000,
+        }
+      }
+    >
+      <img
+        alt="loading spinner"
+        className="Spinner"
+        src="logo.svg"
+      />
+    </div>
+    <div
+      id="movie-widget"
+      style={
+        Object {
+          "height": 600,
+          "overflowY": "scroll",
+          "position": "relative",
+          "width": 850,
+        }
+      }
+    >
+      <ul
+        className="Movie"
+      />
+    </div>
+  </div>
+  <p
+    className="App-intro"
+  >
+    To get started, edit 
+    <code>
+      src/App.js
+    </code>
+     and save to reload.
+  </p>
+</div>
+`;
